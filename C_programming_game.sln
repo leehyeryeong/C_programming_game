@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_programming_game", "C_pro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "printfscanf", "printfscanf\printfscanf.vcxproj", "{B2031737-C52D-4A47-B4CB-AA05972DE214}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loop", "loop\loop.vcxproj", "{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{B2031737-C52D-4A47-B4CB-AA05972DE214}.Release|x64.Build.0 = Release|x64
 		{B2031737-C52D-4A47-B4CB-AA05972DE214}.Release|x86.ActiveCfg = Release|Win32
 		{B2031737-C52D-4A47-B4CB-AA05972DE214}.Release|x86.Build.0 = Release|Win32
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Debug|x64.ActiveCfg = Debug|x64
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Debug|x64.Build.0 = Debug|x64
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Debug|x86.Build.0 = Debug|Win32
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Release|x64.ActiveCfg = Release|x64
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Release|x64.Build.0 = Release|x64
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Release|x86.ActiveCfg = Release|Win32
+		{1111A999-C1C3-40AF-84F3-E37C2E9DF8C0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
