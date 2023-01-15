@@ -24,7 +24,7 @@ int main() {
 
 		if (answer == -1) {
 			printf("프로그램을 종료합니다.\n");
-			break;
+			exit(0);
 		}
 		else if (answer == num1 * num2) {
 			//성공
