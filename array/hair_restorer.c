@@ -41,7 +41,7 @@ int main() {
 			}
 		}
 
-		//사용자에게 문제 펴시
+		//사용자에게 문제 표시
 		for (int k = 0; k < 4; k++) {
 			if (bottle[k] == 1) {
 				printf("%d ", k + 1);
