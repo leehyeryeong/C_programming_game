@@ -29,7 +29,7 @@ int main() {
 	startTime = clock(); //현재 시간을 millisecond (1000분의 1초) 단위로 반환
 	while (1) {
 		printFishes();
-		printf("몇 번 어항에 물을 주시겠어요?");
+		printf("몇 번 어항에 물을 주시겠어요? ");
 		scanf("%d", &num);
 
 		//입력값 체크
@@ -73,6 +73,20 @@ int main() {
 				exit(0);
 			}
 		}
+
+		//모든 물고기가 죽었는지 확인
+		if (checkFishAlive() == 0) {
+			//물고기 모두 ㅠㅠ
+			printf("모든 물고기가... 흑흑ㅠㅠ... \n");
+			exit(0);
+		}
+		else {
+			//최고 한 마리 이상의 물고기는 살아 있음!
+			printf("물고기가 아직 살아있어요!\n");
+		}
+		prevElapsedTime = totalElapsedTime;
+
+		//10초 -> 15초 (5초: prevElapsedTime -> 15초) -> 25초 (10초...?)
 	}
 
 	return 0;
@@ -84,10 +98,10 @@ void initDate() {
 	}
 }
 void printFishes() {
-	printf("%3d번 %3d번 %3d번 %3d번 %3d번 %3d번", 1, 2, 3, 4, 5, 6);
+	printf("%3d번 %3d번 %3d번 %3d번 %3d번 %3d번\n", 1, 2, 3, 4, 5, 6);
 	
 	for (int i = 0; i < 6; i++) {
-		printf(" %3d ", arrayFish[i]);
+		printf(" %4d ", arrayFish[i]);
 	}
 	printf("\n\n");
 }
@@ -98,4 +112,13 @@ void decreaseWater(long elapsedTime) {
 			arrayFish[i] = 0;
 		}
 	}
+}
+int checkFishAlive() {
+	for (int i = 0; i < 6; i++) {
+		if (arrayFish[i] > 0) {
+			return 1; //참 True
+		}
+	}
+
+	return 0;
 }
