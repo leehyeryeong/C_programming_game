@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="m_array.c">
+    <ClCompile Include="m_array2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
