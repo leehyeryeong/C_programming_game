@@ -12,6 +12,9 @@ char* strAnimal[10];
 void initAnimalArray();
 void initAnimalName();
 void shuffleAnimal();
+int getEmptyPosition();
+int conv_pos_x(int x);
+int conv_pos_y(int y);
 
 int main() {
 	srand(time(NULL));
@@ -46,7 +49,34 @@ void initAnimalName() {
 void shuffleAnimal() {
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 2; j++) {
-			//강의 7분 32초부터
+			int pos = getEmptyPosition();
+			int x = conv_pos_x(pos);
+			int y = conv_pos_y(pos);
+
+			arrayAnimal[x][y] = i;
 		}
 	}
+}
+//좌표에서 빈 공간 찾기
+int getEmptyPosition() {
+	while (1) {
+		int randPos = rand() % 20;	//0~19 사이의 숫자 반환
+		//19 -> (3, 4)
+		int x = conv_pos_x(randPos);
+		int y = conv_pos_y(randPos);
+
+		if (arrayAnimal[x][y] == -1) {
+			return randPos;
+		}
+	}
+
+	return 0;
+}
+int conv_pos_x(int x) {
+	//19 -> (3, 4)
+	return x / 5;
+}
+int conv_pos_y(int y) {
+	//19 -> 19 / 5 ? 몫은 3 나머지는 4
+	return y % 5; //y를 5로 나눈 나머지 값
 }
