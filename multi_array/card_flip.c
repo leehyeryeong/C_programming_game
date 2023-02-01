@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <time.h>
 
@@ -7,6 +8,7 @@
 //총 실패 횟수 알려주기
 
 int arrayAnimal[4][5]; //카드 지도(20장의 카드)
+int checkAnimal[4][5]; //뒤집혔는지 여부 확인
 char* strAnimal[10];
 
 void initAnimalArray();
@@ -15,6 +17,8 @@ void shuffleAnimal();
 int getEmptyPosition();
 int conv_pos_x(int x);
 int conv_pos_y(int y);
+void printAnimals();
+void printQuestion();
 
 int main() {
 	srand(time(NULL));
@@ -23,6 +27,22 @@ int main() {
 	initAnimalName();
 
 	shuffleAnimal();
+
+	int failCount = 0; //실패 횟수
+
+	while (1) {
+		int select1 = 0; //사용자가 선택한 처음 수
+		int select2 = 0; //사용자가 선택한 두번째 수
+
+		printAnimals(); //동물 위치 출력
+		printQuestion(); //문제 출력(카드 지도)
+		printf("뒤집을 카드를 2개 고르세요: ");
+		scanf("%d %d", &select1, &select2);
+
+		if (select1 == select2) { //같은 카드 선택 시 무효
+			continue;
+		}
+	}
 
 	return 0;
 }
@@ -79,4 +99,36 @@ int conv_pos_x(int x) {
 int conv_pos_y(int y) {
 	//19 -> 19 / 5 ? 몫은 3 나머지는 4
 	return y % 5; //y를 5로 나눈 나머지 값
+}
+void printAnimals() { //동물 위치 출력
+	//ㅁㅁㅁㅁㅁ 0 1 2 3 4
+	//ㅁㅁㅁㅁㅁ 5 6 7 8 9
+	//ㅁㅁㅁㅁㅁ 10 11 12 13 14
+	//ㅁㅁㅁㅁㅁ 15 16 17 18 19
+	printf("\n=== 이건 비밀인데... 몰래 보여줍니다 ===\n\n");
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 5; j++) {
+			printf("%8s", strAnimal[arrayAnimal[i][j]]);
+		}
+		printf("\n");
+	}
+	printf("\n===============================\n\n");
+}
+void printQuestion() { //문제 출력(카드 지도)
+	printf("\n\n(문제)\n");
+	int seq = 0;
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 5; j++) {
+			//카드를 뒤집어서 정답을 맞췄으면 '동물 이름'
+			if (checkAnimal[i][j] != 0) {
+				printf("%8s", strAnimal[arrayAnimal[i][j]]);
+			}
+			//아직 뒤집지 못했으면 (정답을 못맞췄으면) 뒷면 -> 위치를 나타내는 숫자
+			else {
+				printf("%8d", seq);
+			}
+		}
+	}
 }
