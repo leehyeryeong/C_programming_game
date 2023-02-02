@@ -42,6 +42,9 @@ int main() {
 		if (select1 == select2) { //같은 카드 선택 시 무효
 			continue;
 		}
+
+		//좌표에 해당하는 카드를 뒤집어 보고 같은지 안 같은지 확인
+		int firstSelect_x;
 	}
 
 	return 0;
