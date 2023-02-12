@@ -108,4 +108,6 @@ int checkCollection() {
 	if (collectAll) {
 		printf("\n\n축하합니다! 모든 고양이를 다 모았어요. 열심히 키워주세요!\n");
 	}
+
+	return collectAll;
 }
