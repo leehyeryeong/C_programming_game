@@ -9,7 +9,7 @@ int main() {
 
 	//fputs, fgets
 	char line[MAX]; //char line[10000]
-	FILE* file = fopen("c:\\test1.txt", "wb");
+	FILE* file = fopen("C:\Users\이혜령\OneDrive\문서\test1.txt", "wb");
 	if (file == NULL) {
 		printf("파일 열기 실패!\n");
 		return 1;
