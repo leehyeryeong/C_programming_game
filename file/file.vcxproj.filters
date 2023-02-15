@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="file_write.c">
+    <ClCompile Include="file_read.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
